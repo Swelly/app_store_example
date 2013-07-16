@@ -1,8 +1,8 @@
 class CreateTransactions < ActiveRecord::Migration
   def up
   	create_table :transactions do |t|
-  		t.belongs_to :user_id
-  		t.belongs_to :app_id
+  		t.belongs_to :user
+  		t.belongs_to :app
   		t.timestamps
   	end
   end

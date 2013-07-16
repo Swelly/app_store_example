@@ -14,5 +14,13 @@
   <b>Description:</b>
   <%= @app.description %>
 </p>
-
+<!-- form for :Users to 'buy' (dropdown) -->
+<!-- will POST to the app controller to buy -->
+<br>
+<h2>Play it now!</h2>
+<p>Who's this for?</p>
+<%= form_for @app, url: buy_app_path do |f| %>
+  <%= f.collection_select :users, @users, :id, :name %>
+  <%= f.submit "Buy"%>
+<% end %>
 <%= link_to 'Back', apps_path %>
